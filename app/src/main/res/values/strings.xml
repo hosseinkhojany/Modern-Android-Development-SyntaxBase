@@ -68,4 +68,5 @@
     <string name="tv_measuring_scale_example">Measuring Scale Component</string>
     <string name="tv_back_press_example">Back Press Component</string>
     <string name="tv_zoomable_example">Zoomable Component</string>
+    <string name="title_activity_text">This is TextActivity</string>
 </resources>
