@@ -52,21 +52,9 @@
 //class ImageActivity : AppCompatActivity() {
 //    override fun onCreate(savedInstanceState: Bundle?) {
 //        super.onCreate(savedInstanceState)
-//        // This is an extension function of Activity that sets the @Composable function that's
-//        // passed to it as the root view of the activity. This is meant to replace the .xml file
-//        // that we would typically set using the setContent(R.id.xml_file) method. The setContent
-//        // block defines the activity's layout.
 //        setContent {
-//            // ScrollableColumn is a composable that adds the ability to scroll through the
-//            // child views. We should think of composable functions to be similar to lego blocks -
-//            // each composable function is in turn built up of smaller composable functions
 //            ScrollableColumn {
-//                // Column is a composable that places its children in a vertical sequence. You
-//                // can think of it similar to a LinearLayout with the vertical orientation.
 //
-//                // You can think of Modifiers as implementations of the decorators pattern that are
-//                // used to modify the composable that its applied to. In this example, we assign a
-//                // padding of 16dp to the Column.
 //                Column(modifier = Modifier.padding(16.dp)) {
 //                    DisplayImagesComponent()
 //                }
@@ -75,10 +63,6 @@
 //    }
 //}
 //
-//// We represent a Composable function by annotating it with the @Composable annotation. Composable
-//// functions can only be called from within the scope of other composable functions. We should
-//// think of composable functions to be similar to lego blocks - each composable function is in turn
-//// built up of smaller composable functions.
 //@Composable
 //fun DisplayImagesComponent() {
 //    TitleComponent("Load image from the resource folder")
@@ -97,49 +81,24 @@
 //    TitleComponent("Image with rounded corners")
 //    ImageWithRoundedCorners(R.drawable.landscape)
 //}
-//
-//// We represent a Composable function by annotating it with the @Composable annotation. Composable
-//// functions can only be called from within the scope of other composable functions. We should
-//// think of composable functions to be similar to lego blocks - each composable function is in turn
-//// built up of smaller composable functions.
 //@Composable
 //fun LocalResourceImageComponent(@DrawableRes resId: Int) {
-//    // There are multiple methods available to load an image resource in Compose. However, it would
-//    // be advisable to use the loadImageResource method as it loads an image resource asynchronously
 //    val image = loadImageResource(resId)
 //    image.resource.resource?.let {
-//        // Image is a pre-defined composable that lays out and draws a given [ImageAsset].
-//
-//        // You can think of Modifiers as implementations of the decorators pattern that are
-//        // used to modify the composable that its applied to. In this example, we configure the
-//        // Image composable to have a height of 200 dp.
 //        Image(asset = it,
 //            modifier = Modifier.preferredSizeIn(maxHeight = 200.dp)
 //                .fillMaxWidth())
 //    }
 //}
 //
-//// We represent a Composable function by annotating it with the @Composable annotation. Composable
-//// functions can only be called from within the scope of other composable functions. We should
-//// think of composable functions to be similar to lego blocks - each composable function is in turn
-//// built up of smaller composable functions.
 //@Composable
 //fun ImageWithRoundedCorners(@DrawableRes resId: Int) {
-//    // There are multiple methods available to load an image resource in Compose. However, it would
-//    // be advisable to use the loadImageResource method as it loads an image resource asynchronously
 //    val image = loadImageResource(resId)
 //    image.resource.resource?.let {
-//        // Column is a composable that places its children in a vertical sequence. You
-//        // can think of it similar to a LinearLayout with the vertical orientation.
-//        // In addition we also pass a few modifiers to it.
 //
-//        // You can think of Modifiers as implementations of the decorators pattern that are
-//        // used to modify the composable that its applied to. In this example, we configure the
-//        // Box composable to clip the corners of the image.
 //        Column(
 //            modifier = Modifier.clip(RoundedCornerShape(8.dp))
 //        ) {
-//            // Image is a pre-defined composable that lays out and draws a given [ImageAsset].
 //            Image(
 //                asset = it,
 //                modifier = Modifier.preferredHeight(200.dp)
@@ -148,24 +107,17 @@
 //    }
 //}
 //
-//// We represent a Composable function by annotating it with the @Composable annotation. Composable
-//// functions can only be called from within the scope of other composable functions. We should
-//// think of composable functions to be similar to lego blocks - each composable function is in turn
-//// built up of smaller composable functions.
 //@Composable
 //fun NetworkImageComponentPicasso(
 //    url: String,
 //    modifier: Modifier = Modifier.fillMaxWidth().preferredSizeIn(maxHeight = 200.dp)
 //) {
-//    // Source code inspired from - https://kotlinlang.slack.com/archives/CJLTWPH7S/p1573002081371500.
-//    // Made some minor changes to the code Leland posted.
 //    var image by remember { mutableStateOf<ImageAsset?>(null) }
 //    var drawable by remember { mutableStateOf<Drawable?>(null) }
 //    onCommit(url) {
 //        val picasso = Picasso.get()
 //        val target = object : Target {
 //            override fun onPrepareLoad(placeHolderDrawable: Drawable?) {
-//                // TODO(lmr): we could use the drawable below
 //                drawable = placeHolderDrawable
 //            }
 //
@@ -191,18 +143,12 @@
 //    val theImage = image
 //    val theDrawable = drawable
 //    if (theImage != null) {
-//        // Column is a composable that places its children in a vertical sequence. You
-//        // can think of it similar to a LinearLayout with the vertical orientation.
-//        // In addition we also pass a few modifiers to it.
 //
-//        // You can think of Modifiers as implementations of the decorators pattern that are
-//        // used to modify the composable that its applied to.
 //        Column(
 //            modifier = modifier,
 //            verticalArrangement = Arrangement.Center,
 //            horizontalAlignment = Alignment.CenterHorizontally
 //        ) {
-//            // Image is a pre-defined composable that lays out and draws a given [ImageAsset].
 //            Image(asset = theImage)
 //        }
 //    } else if (theDrawable != null) {
@@ -214,12 +160,6 @@
 //    }
 //}
 //
-///**
-// * There is an ongoing issue with kapt and compose since it uses the IR backend. This causes the
-// * app to not even compile if you are using kapt- https://issuetracker.google.com/issues/143232368.
-// * For that reason, I am avoiding a dependency on the glide annotation processor. If you add that
-// * dependency(or any other kapt related dependency for that matter), the app won't even compile.
-// */
 //@Composable
 //fun NetworkImageComponentGlide(
 //    url: String, modifier: Modifier = Modifier.fillMaxWidth().preferredSizeIn(maxHeight = 200.dp)
@@ -254,18 +194,11 @@
 //    val theImage = image
 //    val theDrawable = drawable
 //    if (theImage != null) {
-//        // Column is a composable that places its children in a vertical sequence. You
-//        // can think of it similar to a LinearLayout with the vertical orientation.
-//        // In addition we also pass a few modifiers to it.
-//
-//        // You can think of Modifiers as implementations of the decorators pattern that are
-//        // used to modify the composable that its applied to.
 //        Column(
 //            modifier = modifier,
 //            verticalArrangement = Arrangement.Center,
 //            horizontalAlignment = Alignment.CenterHorizontally
 //        ) {
-//            // Image is a pre-defined composable that lays out and draws a given [ImageAsset].
 //            Image(asset = theImage)
 //        }
 //    } else if (theDrawable != null) {
@@ -277,14 +210,8 @@
 //    }
 //}
 //
-//// We represent a Composable function by annotating it with the @Composable annotation. Composable
-//// functions can only be called from within the scope of other composable functions. We should
-//// think of composable functions to be similar to lego blocks - each composable function is in turn
-//// built up of smaller composable functions.
 //@Composable
 //fun TitleComponent(title: String) {
-//    // Text is a predefined composable that does exactly what you'd expect it to - display text on
-//    // the screen. It allows you to customize its appearance using style, fontWeight, fontSize, etc.
 //    Text(
 //        title, style = TextStyle(
 //            fontFamily = FontFamily.Monospace, fontWeight = FontWeight.W900,
@@ -293,25 +220,11 @@
 //    )
 //}
 //
-//// RoundedCornerClipModifier is a custom Modifier that is responsible for clipping and
-//// providing a rounder corner to the composable its applied to.
-//// Recommendation from -
-//// https://kotlinlang.slack .com/archives/CJLTWPH7S/p1589826323481600?thread_ts=1589821110.478100&cid=CJLTWPH7S
-//// TODO(vinaygaba) Add some more comments here
 //fun Modifier.RoundedCornerClipModifier(size: Dp): Modifier = composed {
 //    val shape = RoundedCornerShape(size)
 //    clip(shape)
 //}
 //
-///**
-// * Android Studio lets you preview your composable functions within the IDE itself, instead of
-// * needing to download the app to an Android device or emulator. This is a fantastic feature as you
-// * can preview all your custom components(read composable functions) from the comforts of the IDE.
-// * The main restriction is, the composable function must not take any parameters. If your composable
-// * function requires a parameter, you can simply wrap your component inside another composable
-// * function that doesn't take any parameters and call your composable function with the appropriate
-// * params. Also, don't forget to annotate it with @Preview & @Composable annotations.
-// */
 //@Preview("Load image stored in local resources folder")
 //@Composable
 //fun LocalResourceImageComponentPreview() {
