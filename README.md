@@ -1,2 +1,2 @@
 # Modern-Android-Development-SyntaxBase
-Compose + Navigation + test-(ViewModel | Coroutine)
+Compose + Navigation(single activity pattern) + test-(ViewModel | Coroutine)
