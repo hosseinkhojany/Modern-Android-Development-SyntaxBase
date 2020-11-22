@@ -14,7 +14,7 @@
 <!--            android:label="@string/title_activity_text"-->
 <!--            android:theme="@style/Theme.ModernAndroidDevelopment.NoActionBar"></activity>-->
         <activity
-            android:name=".ViewModel-ex.LiveDataActivity"
+            android:name=".viewmodel_ex.LiveDataActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.ModernAndroidDevelopment.NoActionBar">
             <intent-filter>
