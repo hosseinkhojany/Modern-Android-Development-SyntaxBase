@@ -1,4 +1,4 @@
-package com.example.modern_android_development
+package com.example.modern_android_development.custom_views
 
 import androidx.compose.foundation.Text
 import androidx.compose.foundation.background
