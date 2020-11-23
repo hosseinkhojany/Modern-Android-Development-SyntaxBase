@@ -2,6 +2,7 @@ package com.example.modern_android_development
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -30,5 +31,23 @@ class NavHostActivityWithXml : AppCompatActivity() {
         )
         navView.setupWithNavController(navController)
     }
+
+    override fun onSupportNavigateUp(): Boolean {
+        return super.onSupportNavigateUp()
+    }
+
+    fun openDrawer() {
+        val drawer = findViewById<DrawerLayout>(R.id.drawer_layout)
+        drawer?.openDrawer(GravityCompat.START)
+    }
+
+    override fun onBackPressed() {
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            drawerLayout.closeDrawer(GravityCompat.START)
+        } else {
+            super.onBackPressed()
+        }
+    }
+
 }
 

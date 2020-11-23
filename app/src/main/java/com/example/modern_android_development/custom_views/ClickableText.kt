@@ -24,7 +24,7 @@ import androidx.ui.tooling.preview.Preview
 
 
 @Composable
-fun ClickableText() {
+fun ClickableText(onClick: () -> Unit) {
     var showPopup by remember { mutableStateOf(false) }
     Column {
         Row(verticalAlignment =  Alignment.CenterVertically){
@@ -33,10 +33,10 @@ fun ClickableText() {
                 shape = RoundedCornerShape(8.dp),
                 backgroundColor = MaterialTheme.colors.surface,
                 modifier = Modifier.padding(8.dp)
-                    .clickable(onClick = {showPopup = true})
+                    .clickable(onClick = onClick)
             ) {
                 Text(
-                    text = "Click to see dialog", modifier = Modifier.padding(16.dp),
+                    text = "Go To Fragment2", modifier = Modifier.padding(16.dp),
                     style = TextStyle(
                         fontSize = TextUnit.Sp(16),
                         fontFamily = FontFamily.Serif
@@ -79,6 +79,6 @@ fun ClickableText() {
 @Composable
 fun ClickableTextPreview() {
     Column {
-        ClickableText()
+        ClickableText({})
     }
 }
