@@ -2,6 +2,11 @@ package com.example.modern_android_development
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.compose.foundation.Text
+import androidx.compose.foundation.layout.Column
+import androidx.compose.material.TopAppBar
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.setContent
 //import androidx.navigation.compose.NavHost
 //import androidx.navigation.compose.rememberNavController

@@ -48,7 +48,7 @@
     <string name="textfield_desc">Text input</string>
     <string name="not_available">Functionality currently not available</string>
     <string name="not_available_subtitle">Grab a beverage and check back later!</string>
-
+    <string name="title_activity_test">My Compose App</string>
 
 
 </resources>
