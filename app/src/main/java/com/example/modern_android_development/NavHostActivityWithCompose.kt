@@ -3,8 +3,8 @@ package com.example.modern_android_development
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.ui.platform.setContent
-import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.rememberNavController
+//import androidx.navigation.compose.NavHost
+//import androidx.navigation.compose.rememberNavController
 import com.example.modern_android_development.ui.ModernAndroidDevelopmentTheme
 
 //Container Single Activity
@@ -15,11 +15,11 @@ class NavHostActivityWithCompose : AppCompatActivity() {
         setContent {
             ModernAndroidDevelopmentTheme{
 
-                val navController = rememberNavController()
-                
-                NavHost(navController = navController, startDestination = "Frag1"){
-
-                }
+//                val navController = rememberNavController()
+//
+//                NavHost(navController = navController, startDestination = "Frag1"){
+//
+//                }
 
             }
         }

@@ -75,10 +75,13 @@ fun ClickableText(onClick: () -> Unit) {
         )
     }
 }
+
+
+
 @Preview
 @Composable
 fun ClickableTextPreview() {
     Column {
-        ClickableText({})
+        ClickableText{}
     }
 }
