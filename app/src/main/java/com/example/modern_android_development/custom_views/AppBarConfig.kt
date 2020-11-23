@@ -25,13 +25,12 @@ fun AppBarConfig(modifier: Modifier = Modifier,
                  title: @Composable RowScope.() -> Unit,
                  actions: @Composable RowScope.() -> Unit = {}){
 
-    Column {
         TopAppBar(
             modifier = modifier,
             elevation = 0.dp, // No shadow needed
             contentColor = MaterialTheme.colors.onSurface,
             actions = actions,
-            title = { Text(text = "title") },//{ Row { title() } }, // https://issuetracker.google.com/168793068
+            title = { Row{ title() } },//{ Row { title() } }, // https://issuetracker.google.com/168793068
             navigationIcon = {
                 Image(
                     asset = vectorResource(id = R.drawable.ic_launcher_background),
@@ -42,7 +41,6 @@ fun AppBarConfig(modifier: Modifier = Modifier,
             }
         )
         Divider()
-    }
 }
 
 @Preview

@@ -13,7 +13,7 @@ package="com.example.modern_android_development">
     <!--            android:label="@string/title_activity_text"-->
     <!--            android:theme="@style/Theme.ModernAndroidDevelopment.NoActionBar"></activity>-->
     <activity
-        android:name=".TestActivity"
+        android:name=".NavHostActivityWithXml"
         android:label="@string/app_name"
         android:theme="@style/Theme.ModernAndroidDevelopmentTheme.NoActionBar">
         <intent-filter>

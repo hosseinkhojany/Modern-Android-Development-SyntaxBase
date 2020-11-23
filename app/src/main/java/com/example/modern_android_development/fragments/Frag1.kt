@@ -7,10 +7,7 @@ import android.view.ViewGroup
 import androidx.compose.foundation.Icon
 import androidx.compose.foundation.Text
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.preferredHeight
+import androidx.compose.foundation.layout.*
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.TopAppBar
@@ -44,15 +41,61 @@ class Frag1 : Fragment() {
             setContent {
                 //Appbar configuration
                 ModernAndroidDevelopmentTheme {
-                    TopAppBar(title = { Text(text = "Fragment 1") })
+//                    AppBarConfig(modifier = Modifier.height(60.dp).fillMaxWidth(),
+//                        onNavIconPressed = {
+//                            (activity as? NavHostActivityWithXml)?.openDrawer()
+//                        },
+//                        title = {
+//                            Column(
+//                                modifier = Modifier.weight(1f),
+//                                horizontalAlignment = Alignment.CenterHorizontally
+//                            ) {
+//                                // Channel name
+//                                Text(
+//                                    text = "Fragmnet",
+//                                    style = MaterialTheme.typography.subtitle1
+//                                )
+//                                // Number of members
+//                                    Text(
+//                                        text =  "Fragment",
+//                                        style = MaterialTheme.typography.caption,
+//                                        color = MaterialTheme.colors.onSurface
+//                                    )
+//                            }
+//                        },
+//                        actions = {
+//                                // Search icon
+//                                Icon(
+//                                    asset = Icons.Outlined.Search,
+//                                    modifier = Modifier
+//                                        .clickable(onClick = {}) // TODO: Show not implemented dialog.
+//                                        .padding(horizontal = 12.dp, vertical = 16.dp)
+//                                        .preferredHeight(24.dp)
+//                                )
+//                                // Info icon
+//                                Icon(
+//                                    asset = Icons.Outlined.Info,
+//                                    modifier = Modifier
+//                                        .clickable(onClick = {}) // TODO: Show not implemented dialog.
+//                                        .padding(horizontal = 12.dp, vertical = 16.dp)
+//                                        .preferredHeight(24.dp)
+//                                )
+//                        })
+
+
                     Surface(contentColor = Color.White) {
-                        Column {
-                            ClickableText {
-                                findNavController().navigate(
+                        Column (modifier = Modifier.fillMaxSize()){
+
+                            TopAppBar(title = { Text(text = "Hello") })
+
+                            Column {
+                                ClickableText {
+                                    findNavController().navigate(
                                         R.id.action_frag1_to_frag2
-                                )
+                                    )
+                                }
+                                Text(text = "Fragment 1")
                             }
-                            Text(text = "Fragment 1")
                         }
                     }
                 }
