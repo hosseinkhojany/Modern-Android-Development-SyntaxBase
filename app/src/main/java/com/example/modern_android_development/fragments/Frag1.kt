@@ -41,48 +41,6 @@ class Frag1 : Fragment() {
             setContent {
                 //Appbar configuration
                 ModernAndroidDevelopmentTheme {
-//                    AppBarConfig(modifier = Modifier.height(60.dp).fillMaxWidth(),
-//                        onNavIconPressed = {
-//                            (activity as? NavHostActivityWithXml)?.openDrawer()
-//                        },
-//                        title = {
-//                            Column(
-//                                modifier = Modifier.weight(1f),
-//                                horizontalAlignment = Alignment.CenterHorizontally
-//                            ) {
-//                                // Channel name
-//                                Text(
-//                                    text = "Fragmnet",
-//                                    style = MaterialTheme.typography.subtitle1
-//                                )
-//                                // Number of members
-//                                    Text(
-//                                        text =  "Fragment",
-//                                        style = MaterialTheme.typography.caption,
-//                                        color = MaterialTheme.colors.onSurface
-//                                    )
-//                            }
-//                        },
-//                        actions = {
-//                                // Search icon
-//                                Icon(
-//                                    asset = Icons.Outlined.Search,
-//                                    modifier = Modifier
-//                                        .clickable(onClick = {}) // TODO: Show not implemented dialog.
-//                                        .padding(horizontal = 12.dp, vertical = 16.dp)
-//                                        .preferredHeight(24.dp)
-//                                )
-//                                // Info icon
-//                                Icon(
-//                                    asset = Icons.Outlined.Info,
-//                                    modifier = Modifier
-//                                        .clickable(onClick = {}) // TODO: Show not implemented dialog.
-//                                        .padding(horizontal = 12.dp, vertical = 16.dp)
-//                                        .preferredHeight(24.dp)
-//                                )
-//                        })
-
-
                     Surface(contentColor = Color.White) {
                         Column (modifier = Modifier.fillMaxSize()){
 

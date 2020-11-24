@@ -2,12 +2,21 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main_container"
-    app:startDestination="@id/frag1">
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.modern_android_development.login.LoginActivity"
+        android:label="Frag1">
+        <action
+            android:id="@+id/action_loginFragment_to_frag1"
+            app:destination="@id/frag1" />
+    </fragment>
 
     <fragment
         android:id="@+id/frag1"
         android:name="com.example.modern_android_development.fragments.Frag1"
-        android:label="Frag1" >
+        android:label="Frag1">
         <action
             android:id="@+id/action_frag1_to_frag2"
             app:destination="@id/frag2" />
@@ -26,7 +35,7 @@
     <fragment
         android:id="@+id/frag3"
         android:name="com.example.modern_android_development.fragments.Frag3"
-        android:label="Frag3" >
+        android:label="Frag3">
         <action
             android:id="@+id/action_frag3_to_frag1"
             app:destination="@id/frag1" />
