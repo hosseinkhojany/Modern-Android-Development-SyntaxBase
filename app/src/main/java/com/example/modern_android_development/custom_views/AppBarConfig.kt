@@ -1,5 +1,6 @@
 package com.example.modern_android_development.custom_views
 
+import android.app.Activity
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.Text
 import androidx.compose.foundation.clickable
@@ -15,30 +16,35 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.unit.dp
 import androidx.ui.tooling.preview.Preview
+import com.example.modern_android_development.NavHostActivityWithCompose
+import com.example.modern_android_development.NavHostActivityWithXml
 import com.example.modern_android_development.ui.ModernAndroidDevelopmentTheme
 import com.example.modern_android_development.R
 
 
 @Composable
-fun AppBarConfig(modifier: Modifier = Modifier,
+fun AppBarConfig(activity: Activity?,
+                modifier: Modifier = Modifier,
                  onNavIconPressed: () -> Unit = {},
                  title: @Composable RowScope.() -> Unit,
                  actions: @Composable RowScope.() -> Unit = {}){
 
         TopAppBar(
-            modifier = modifier,
-            elevation = 0.dp, // No shadow needed
-            contentColor = MaterialTheme.colors.onSurface,
-            actions = actions,
-            title = { Row{ title() } },//{ Row { title() } }, // https://issuetracker.google.com/168793068
-            navigationIcon = {
-                Image(
-                    asset = vectorResource(id = R.drawable.ic_launcher_background),
-                    modifier = Modifier
-                        .clickable(onClick = onNavIconPressed)
-                        .padding(horizontal = 16.dp)
-                )
-            }
+                modifier = modifier,
+                elevation = 0.dp, // No shadow needed
+                contentColor = MaterialTheme.colors.onSurface,
+                actions = actions,
+                title = { Row { title() } },//{ Row { title() } }, // https://issuetracker.google.com/168793068
+                navigationIcon = {
+                    Image(
+                            asset = vectorResource(id = R.drawable.ic_baseline_menu_24),
+                            modifier = Modifier
+                                    .clickable(onClick = {
+                                        (activity as? NavHostActivityWithXml)?.openDrawer()
+                                    })
+                                    .padding(horizontal = 16.dp)
+                    )
+                }
         )
         Divider()
 }
@@ -47,7 +53,7 @@ fun AppBarConfig(modifier: Modifier = Modifier,
 @Composable
 fun JetchatAppBarPreview() {
     ModernAndroidDevelopmentTheme() {
-        AppBarConfig(title = { Text("Preview!") })
+        AppBarConfig(activity = null , title = { Text("Preview!") })
     }
 }
 
@@ -55,6 +61,6 @@ fun JetchatAppBarPreview() {
 @Composable
 fun JetchatAppBarPreviewDark() {
     ModernAndroidDevelopmentTheme(darkTheme = true) {
-        AppBarConfig(title = { Text("Preview!") })
+        AppBarConfig(activity = null , title = { Text("Preview!") })
     }
 }
