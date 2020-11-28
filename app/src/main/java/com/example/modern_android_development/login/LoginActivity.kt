@@ -8,7 +8,6 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.ui.platform.ComposeView
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
-import com.example.modern_android_development.NavHostActivityWithXml
 import com.example.modern_android_development.R
 import com.example.modern_android_development.custom_views.AppBarConfig
 

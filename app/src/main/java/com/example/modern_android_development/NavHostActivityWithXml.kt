@@ -20,6 +20,7 @@ class NavHostActivityWithXml : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
         drawerLayout = findViewById(R.id.drawer_layout)
         val navView: NavigationView = findViewById(R.id.nav_view)
         val navController = findNavController(R.id.nav_host_fragment)
@@ -30,6 +31,7 @@ class NavHostActivityWithXml : AppCompatActivity() {
             ),
             drawerLayout
         )
+
         navView.setupWithNavController(navController)
     }
 
