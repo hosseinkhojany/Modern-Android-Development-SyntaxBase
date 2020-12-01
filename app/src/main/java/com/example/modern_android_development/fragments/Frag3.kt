@@ -20,6 +20,8 @@ import com.example.modern_android_development.custom_views.ClickableText
 
 class Frag3 : Fragment(){
 
+
+    //hello world
     var str: String = "Null"
 
     override fun onAttach(context: Context) {
